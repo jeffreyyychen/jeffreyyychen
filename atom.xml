@@ -3,11 +3,11 @@
   <title>Hexo</title>
   
   
-  <link href="https://jeffreyyychen.github.io/blog/atom.xml" rel="self"/>
+  <link href="https://chj.gitee.io/atom.xml" rel="self"/>
   
-  <link href="https://jeffreyyychen.github.io/blog/"/>
+  <link href="https://chj.gitee.io/"/>
   <updated>2020-11-14T03:15:51.886Z</updated>
-  <id>https://jeffreyyychen.github.io/blog/</id>
+  <id>https://chj.gitee.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>test</title>
-    <link href="https://jeffreyyychen.github.io/blog/2020/11/14/test/"/>
-    <id>https://jeffreyyychen.github.io/blog/2020/11/14/test/</id>
+    <link href="https://chj.gitee.io/2020/11/14/test/"/>
+    <id>https://chj.gitee.io/2020/11/14/test/</id>
     <published>2020-11-14T02:24:56.000Z</published>
     <updated>2020-11-14T03:15:51.886Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Mysql安装</title>
-    <link href="https://jeffreyyychen.github.io/blog/2020/11/14/Mysql%E5%AE%89%E8%A3%85/"/>
-    <id>https://jeffreyyychen.github.io/blog/2020/11/14/Mysql%E5%AE%89%E8%A3%85/</id>
+    <link href="https://chj.gitee.io/2020/11/14/Mysql%E5%AE%89%E8%A3%85/"/>
+    <id>https://chj.gitee.io/2020/11/14/Mysql%E5%AE%89%E8%A3%85/</id>
     <published>2020-11-13T17:55:10.000Z</published>
     <updated>2020-11-13T17:55:45.117Z</updated>
     
@@ -60,8 +60,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://jeffreyyychen.github.io/blog/2020/11/14/hello-world/"/>
-    <id>https://jeffreyyychen.github.io/blog/2020/11/14/hello-world/</id>
+    <link href="https://chj.gitee.io/2020/11/14/hello-world/"/>
+    <id>https://chj.gitee.io/2020/11/14/hello-world/</id>
     <published>2020-11-13T16:07:54.237Z</published>
     <updated>2020-11-13T16:07:54.237Z</updated>
     
