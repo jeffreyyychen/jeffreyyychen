@@ -3,11 +3,11 @@
   <title>Hexo</title>
   
   
-  <link href="https://jeffreyyychen.github.io/atom.xml" rel="self"/>
+  <link href="https://chj.gitee.io/atom.xml" rel="self"/>
   
-  <link href="https://jeffreyyychen.github.io/"/>
-  <updated>2020-11-14T03:32:07.681Z</updated>
-  <id>https://jeffreyyychen.github.io/</id>
+  <link href="https://chj.gitee.io/"/>
+  <updated>2020-11-14T03:38:03.773Z</updated>
+  <id>https://chj.gitee.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,17 +18,18 @@
   
   <entry>
     <title>test</title>
-    <link href="https://jeffreyyychen.github.io/2020/11/14/test/"/>
-    <id>https://jeffreyyychen.github.io/2020/11/14/test/</id>
+    <link href="https://chj.gitee.io/2020/11/14/test/"/>
+    <id>https://chj.gitee.io/2020/11/14/test/</id>
     <published>2020-11-14T02:24:56.000Z</published>
-    <updated>2020-11-14T03:32:07.681Z</updated>
+    <updated>2020-11-14T03:38:03.773Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="123131dd"><a href="#123131dd" class="headerlink" title="123131dd"></a>123131dd</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="123131dd"><a href="#123131dd" class="headerlink" title="123131dd"></a>123131dd</h1><p>ddd</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;123131dd&quot;&gt;&lt;a href=&quot;#123131dd&quot; class=&quot;headerlink&quot; title=&quot;123131dd&quot;&gt;&lt;/a&gt;123131dd&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;123131dd&quot;&gt;&lt;a href=&quot;#123131dd&quot; class=&quot;headerlink&quot; title=&quot;123131dd&quot;&gt;&lt;/a&gt;123131dd&lt;/h1&gt;&lt;p&gt;ddd&lt;/p&gt;
+</summary>
       
     
     
@@ -38,8 +39,8 @@
   
   <entry>
     <title>Mysql安装</title>
-    <link href="https://jeffreyyychen.github.io/2020/11/14/Mysql%E5%AE%89%E8%A3%85/"/>
-    <id>https://jeffreyyychen.github.io/2020/11/14/Mysql%E5%AE%89%E8%A3%85/</id>
+    <link href="https://chj.gitee.io/2020/11/14/Mysql%E5%AE%89%E8%A3%85/"/>
+    <id>https://chj.gitee.io/2020/11/14/Mysql%E5%AE%89%E8%A3%85/</id>
     <published>2020-11-13T17:55:10.000Z</published>
     <updated>2020-11-13T17:55:45.117Z</updated>
     
@@ -59,8 +60,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://jeffreyyychen.github.io/2020/11/14/hello-world/"/>
-    <id>https://jeffreyyychen.github.io/2020/11/14/hello-world/</id>
+    <link href="https://chj.gitee.io/2020/11/14/hello-world/"/>
+    <id>https://chj.gitee.io/2020/11/14/hello-world/</id>
     <published>2020-11-13T16:07:54.237Z</published>
     <updated>2020-11-13T16:07:54.237Z</updated>
     
