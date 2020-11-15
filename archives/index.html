@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.1'>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.6'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -36,28 +36,19 @@
 
   <!-- link -->
   
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
-
-  
-  
-
-  
-
-  
-
-  
-
-  
 
   <!-- import link -->
   
 
   
-  
     
-<link rel="stylesheet" href="/blog/css/style.css">
+<link rel="stylesheet" href="/blog/css/first.css">
 
+  
+
+  
+  <link rel="stylesheet" href="/blog/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/blog/css/style.css"></noscript>
   
 
   <script id="loadcss"></script>
@@ -601,7 +592,7 @@
     
       
         Use
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.1" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.6" target="_blank" class="codename">Volantis</a>
         as theme
       
     
@@ -621,6 +612,7 @@
   <div>
     <script>
 window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
 /********************脚本懒加载函数********************************/
 function loadScript(src, cb) {
 var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
@@ -689,6 +681,14 @@ var loadCSS = function( href, before, media, attributes ){
 	onloadcssdefined( loadCB );
 	return ss;
 };
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  
+  
 </script>
 <!-- required -->
 
@@ -807,7 +807,7 @@ var loadCSS = function( href, before, media, attributes ){
 
   
   
-<script src="/blog/js/valine.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.6/source/js/valine.min.js"></script>
 
 
 <script>
@@ -884,16 +884,8 @@ var loadCSS = function( href, before, media, attributes ){
 
 
   
-<script src="/blog/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.6/source/js/app.min.js"></script>
 
-
-
-
-  
-    
-<script src="/blog/js/search.js"></script>
-
-  
 
 
 <!-- optional -->
@@ -901,14 +893,24 @@ var loadCSS = function( href, before, media, attributes ){
   <script>
 const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
 const ROOT =  ("/blog/" || "/").endsWith('/') ? ("/blog/" || "/") : ("/blog//" || "/" );
-(function ($) {
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.6/source/js/search/hexo.min.js',setSearchService);
+	
+})
+
+function listenSearch(){
   
     customSearch = new HexoSearch({
       imagePath: SearchServiceimagePath
     });
   
-})(jQuery);
-
+}
+function setSearchService() {
+	listenSearch();
+	
+}
 </script>
 
 
@@ -1228,22 +1230,6 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 
 <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
 
-<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
-  
-    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
-    <script>
-      window.ShowLoading = function() {
-        NProgress.start();
-      };
-      window.HideLoading = function() {
-        NProgress.done();
-      }
-    </script>
-  
-</div>
 
 <script>
     var pjax;
@@ -1293,19 +1279,20 @@ document.addEventListener("pjax:success", listennSidebarTOC);
       $(document).unbind('scroll');
       $(document).unbind('click');
       $('body').unbind('click');
-      window.ShowLoading();
+	  
     });
 
     document.addEventListener('pjax:complete', function () {
       // 关于百度统计对 SPA 页面的处理：
       // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
       // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-      // 
+       
 
       // 关于谷歌统计对 SPA 页面的处理：
       // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
       // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
       
+	 
 
       $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
       $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
@@ -1332,11 +1319,11 @@ document.addEventListener("pjax:success", listennSidebarTOC);
       } catch (e) {
         console.log(e);
       }
-      window.HideLoading();
+	  
     });
 
     document.addEventListener('pjax:error', function (e) {
-      window.HideLoading();
+	  
       window.location.href = e.triggerElement.href;
     });
 </script>
