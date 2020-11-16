@@ -26,7 +26,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/jeffreyyychen/atom.xml" title="Hexo" type="application/atom+xml">
   
 
   <!-- import meta -->
@@ -40,13 +40,13 @@
 
   
     
-<link rel="stylesheet" href="/blog/css/first.css">
+<link rel="stylesheet" href="/jeffreyyychen/css/first.css">
 
   
 
   
-  <link rel="stylesheet" href="/blog/css/style.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/blog/css/style.css"></noscript>
+  <link rel="stylesheet" href="/jeffreyyychen/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/jeffreyyychen/css/style.css"></noscript>
   
 
   <script id="loadcss"></script>
@@ -71,7 +71,7 @@
 		<div class="nav-main">
       
         
-        <a class="title flat-box" target="_self" href='/blog/'>
+        <a class="title flat-box" target="_self" href='/jeffreyyychen/'>
           
           
           
@@ -88,11 +88,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/blog/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/jeffreyyychen/
                   
                   
                   
-                    id="blog"
+                    id="jeffreyyychen"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -104,11 +104,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/blog/categories/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/jeffreyyychen/categories/
                   
                   
                   
-                    id="blogcategories"
+                    id="jeffreyyychencategories"
                   >
                   <i class='fas fa-folder-open fa-fw'></i>分类
                 </a>
@@ -120,11 +120,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/blog/tags/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/jeffreyyychen/tags/
                   
                   
                   
-                    id="blogtags"
+                    id="jeffreyyychentags"
                   >
                   <i class='fas fa-tags fa-fw'></i>标签
                 </a>
@@ -136,11 +136,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/blog/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/jeffreyyychen/archives/
                   
                   
                   
-                    id="blogarchives"
+                    id="jeffreyyychenarchives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -170,11 +170,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/blog/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/jeffreyyychen/
                   
                   
                   
-                    id="blog"
+                    id="jeffreyyychen"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -186,11 +186,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/blog/categories/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/jeffreyyychen/categories/
                   
                   
                   
-                    id="blogcategories"
+                    id="jeffreyyychencategories"
                   >
                   <i class='fas fa-folder-open fa-fw'></i>分类
                 </a>
@@ -202,11 +202,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/blog/tags/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/jeffreyyychen/tags/
                   
                   
                   
-                    id="blogtags"
+                    id="jeffreyyychentags"
                   >
                   <i class='fas fa-tags fa-fw'></i>标签
                 </a>
@@ -218,11 +218,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/blog/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/jeffreyyychen/archives/
                   
                   
                   
-                    id="blogarchives"
+                    id="jeffreyyychenarchives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -320,7 +320,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="categories" data-path="/blog/categories/">
+      <div id="lc-pv" data-title="categories" data-path="/jeffreyyychen/categories/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -720,6 +720,61 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
 
 
 
@@ -738,7 +793,7 @@ var loadCSS = function( href, before, media, attributes ){
 
   <script>
 const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
-const ROOT =  ("/blog/" || "/").endsWith('/') ? ("/blog/" || "/") : ("/blog//" || "/" );
+const ROOT =  ("/jeffreyyychen/" || "/").endsWith('/') ? ("/jeffreyyychen/" || "/") : ("/jeffreyyychen//" || "/" );
 
 $('.input.u-search-input').one('focus',function(){
 	
@@ -1264,6 +1319,8 @@ document.addEventListener("pjax:success", listennSidebarTOC);
         
         
         
+        
+          pjax_initCopyCode();
         
         
         
