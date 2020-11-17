@@ -1674,10 +1674,10 @@ pre {
   -moz-transition: all 0.28s ease;
   -webkit-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
-  background: rgba(0,242,0,0);
+  background: #00f200;
 }
 .highlight:hover .gutter {
-  background: rgba(0,230,0,0);
+  background: #00e600;
 }
 .highlight figcaption {
   font-size: 13px;
@@ -2434,7 +2434,7 @@ article#tag .all-tags ul li span:before {
   background: var(--color-codeblock);
   font-size: 0.8125rem;
   font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
-  border: 1px solid rgba(0,224,0,0);
+  border: 1px solid #00e000;
   padding: 16px;
   border-radius: 4px;
 }

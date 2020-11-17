@@ -302,96 +302,6 @@
   
     
     <h2 class="article-title" >
-      <a href="/2020/11/16/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-16</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/16/hello-world/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/11/14/test/">
-        test
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        123131dddsfsdfsdf
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/docker/">docker</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/11/14/test/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
       <a href="/2020/11/14/Mysql%E5%AE%89%E8%A3%85/">
         Mysql安装
       </a>
@@ -425,6 +335,110 @@ doc...
       
         <div>
           <a class='readmore' href='/2020/11/14/Mysql%E5%AE%89%E8%A3%85/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/11/11/Linux%E4%B8%8B%E8%BF%90%E8%A1%8C.net%20core%E6%9C%8D%E5%8A%A1/">
+        Linux下运行.net core服务
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        Linux下运行 .net core服务
+通过vs发布代码，在发布时生成的环境设置成linux。将发布后的文件放到服务器上。
+
+进入 /etc/systemd/system 添加.service文件，用来启动进程守护。
+
+
+ vim  /etc/systemd/system/test.service
+文件内容如下：
+[Unit]
+#简单描述
+Description=run dotNet se...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/net-core/">.net core</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/11/Linux%E4%B8%8B%E8%BF%90%E8%A1%8C.net%20core%E6%9C%8D%E5%8A%A1/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/11/05/%E7%94%A8Filter%E8%AE%B0%E5%BD%95%E8%AE%BF%E9%97%AE%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BF%A1%E6%81%AF/">
+        用Filter记录访问接口的信息
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        用Filter记录访问接口的信息为了记录每次访问接口的数据到数据库，想到了通过Fileter来监控访问的数据。首先创建UserOperationLogAttribute，继承于ActionFilterAttribute。我们重写OnResultExecuted函数。
+
+public class UserOperationLogAttribute : ActionFilterAttribute...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-05</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/net-core/">.net core</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/11/05/%E7%94%A8Filter%E8%AE%B0%E5%BD%95%E8%AE%BF%E9%97%AE%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BF%A1%E6%81%AF/'>
             Read More
           </a>
         </div>
@@ -537,7 +551,12 @@ doc...
           <li><a class="flat-box"
             title="/categories/docker/" href="/categories/docker/"
             id="categoriesdocker"
-            ><div class='name'>docker</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>docker</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/net-core/" href="/categories/net-core/"
+            id="categoriesnet-core"
+            ><div class='name'>.net core</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>

@@ -19,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hello World - Hexo</title>
+  <title>Linux下运行.net core服务 - Hexo</title>
   
 
   
@@ -285,7 +285,7 @@
     
     
       <h1 class="title">
-        Hello World
+        Linux下运行.net core服务
       </h1>
       <div class='new-meta-box'>
         
@@ -302,6 +302,13 @@
         
           
             
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/net-core/">.net core</a>
+    </a>
+  </div>
+
 
           
         
@@ -309,7 +316,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Nov 16, 2020</p>
+    <p>发布于：Nov 11, 2020</p>
   </a>
 </div>
 
@@ -320,7 +327,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="Hello World" data-path="/2020/11/16/hello-world/">
+      <div id="lc-pv" data-title="Linux下运行.net core服务" data-path="/2020/11/11/Linux%E4%B8%8B%E8%BF%90%E8%A1%8C.net%20core%E6%9C%8D%E5%8A%A1/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -337,15 +344,37 @@
 
 
   
-  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+  <h1 id="Linux下运行-net-core服务"><a href="#Linux下运行-net-core服务" class="headerlink" title="Linux下运行 .net core服务"></a>Linux下运行 .net core服务</h1><ol>
+<li><p>通过vs发布代码，在发布时生成的环境设置成linux。将发布后的文件放到服务器上。</p>
+</li>
+<li><p>进入 <em>/etc/systemd/system</em> 添加.service文件，用来启动进程守护。</p>
+</li>
+</ol>
+<pre><code class="powershell"> vim  /etc/systemd/system/test.service</code></pre>
+<p>文件内容如下：</p>
+<pre><code class="powershell">[Unit]
+#简单描述
+Description=run dotNet service
+
+[Service]
+#工作目录
+WorkingDirectory=/root/home/wwwroot/Test
+#开启时执行的命令
+ExecStart=/usr/bin/dotnet /root/home/wwwroot/Test/Test.dll
+Type=simple
+User=root
+Group=root
+#只有出错时重启，Restart=always表示无论什么原因造成服务停止都会重启
+Restart=on-failure
+#服务崩溃时，十秒钟重启一次
+RestartSec=10
+
+[Install]
+#该服务所在的target
+#这里符号链接放在/usr/lib/systemd/system/multi-user.target.wants目录下
+WantedBy=multi-user.target</code></pre>
+<p>然后通过命令 <em>systemctl daemon-reload</em> 重新加载配置文件，使用 <em>systemctl start test.service</em> 启动服务。通过命令启动服务不一定成功，如果是编辑之前存在的配置文件，则在重新加载配置文件后使用 <em>systemctl restart test.service</em> 重启服务即可，使用 <em>systemctl status test.service</em> 查看服务运行情况，效果如下：</p>
+<p><img src="https://gitee.com/chj545/picture/raw/master//images/2020_1117_221321_5977.png" class="lazyload" data-srcset="https://gitee.com/chj545/picture/raw/master//images/2020_1117_221321_5977.png" srcset="data:image/png;base64,666" alt="图片"></p>
 
   
   
@@ -363,7 +392,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://jeffreyyychen.github.io/2020/11/16/hello-world/>https://jeffreyyychen.github.io/2020/11/16/hello-world/</a></p>
+                <p>本文永久链接是：<a href=https://jeffreyyychen.github.io/2020/11/11/Linux%E4%B8%8B%E8%BF%90%E8%A1%8C.net%20core%E6%9C%8D%E5%8A%A1/>https://jeffreyyychen.github.io/2020/11/11/Linux%E4%B8%8B%E8%BF%90%E8%A1%8C.net%20core%E6%9C%8D%E5%8A%A1/</a></p>
               
             
           </blockquote>
@@ -380,10 +409,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-14T00:07:54+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-17T22:13:27+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Nov 14, 2020</p>
+    <p>更新于：Nov 17, 2020</p>
   </a>
 </div>
 
@@ -402,7 +431,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jeffreyyychen.github.io/2020/11/16/hello-world/&title=Hello World - Hexo&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jeffreyyychen.github.io/2020/11/11/Linux%E4%B8%8B%E8%BF%90%E8%A1%8C.net%20core%E6%9C%8D%E5%8A%A1/&title=Linux下运行.net core服务 - Hexo&summary="
           
           >
           
@@ -414,7 +443,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jeffreyyychen.github.io/2020/11/16/hello-world/&title=Hello World - Hexo&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jeffreyyychen.github.io/2020/11/11/Linux%E4%B8%8B%E8%BF%90%E8%A1%8C.net%20core%E6%9C%8D%E5%8A%A1/&title=Linux下运行.net core服务 - Hexo&summary="
           
           >
           
@@ -426,7 +455,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://jeffreyyychen.github.io/2020/11/16/hello-world/&title=Hello World - Hexo&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://jeffreyyychen.github.io/2020/11/11/Linux%E4%B8%8B%E8%BF%90%E8%A1%8C.net%20core%E6%9C%8D%E5%8A%A1/&title=Linux下运行.net core服务 - Hexo&summary="
           
           >
           
@@ -456,10 +485,19 @@
   
     <div class="prev-next">
       
+        <a class='prev' href='/2020/11/14/Mysql%E5%AE%89%E8%A3%85/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Mysql安装</p>
+          <p class='content'>Docker安装Mysql1.拉取镜像
+2.运行mysql
+docker run-d-p 3306:3306 --name [Name] [ImageName]
+# 示例
+docker run ...</p>
+        </a>
       
-        <a class='next' href='/2020/11/14/test/'>
-          <p class='title'>test<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>123131dddsfsdfsdf</p>
+      
+        <a class='next' href='/2020/11/05/%E7%94%A8Filter%E8%AE%B0%E5%BD%95%E8%AE%BF%E9%97%AE%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BF%A1%E6%81%AF/'>
+          <p class='title'>用Filter记录访问接口的信息<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>用Filter记录访问接口的信息为了记录每次访问接口的数据到数据库，想到了通过Fileter来监控访问的数据。首先创建UserOperationLogAttribute，继承于ActionFil...</p>
         </a>
       
     </div>
@@ -495,7 +533,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        
     </div>
   </section>
 
@@ -515,7 +553,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Hello World";
+  pdata.postTitle="Linux下运行.net core服务";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
